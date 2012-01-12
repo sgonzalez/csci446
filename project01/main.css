@@ -68,8 +68,11 @@ ul.horizontal {
 
 #footer {
 	background-color:#EEE;
+	height:30px;
 }
 
 #footertext {
-	
+	font-size:9pt;
+	position:relative;
+	top:5px;
 }
