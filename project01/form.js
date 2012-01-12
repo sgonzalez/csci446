@@ -1,4 +1,6 @@
 
 function submitButton() {
-	alert("Surely you feel something!")
+	if (document.getElementById('form1').value.length == 0) {
+		alert("Surely you feel something!")
+	}
 }
