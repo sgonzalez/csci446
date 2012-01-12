@@ -20,6 +20,7 @@ h6 {
 	width:900px;
 	margin-left:auto;
 	margin-right:auto;
+	border:1px solid;
 }
 
 #nav {
@@ -27,12 +28,17 @@ h6 {
 	color:#FFF;
 }
 
+a {
+	text-decoration:none;
+	color:#FFF;
+}
+
 ul.horizontal {
-	
+	list-style-type: none;
 }
 
 .navitem {
-	
+	display:inline;
 }
 
 .navitem:hover {
