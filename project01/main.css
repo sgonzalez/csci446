@@ -1,5 +1,6 @@
 body {
-	
+	background-color:#999;
+	font-family:Helvetica,Arial,Verdana,sans-serif;
 }
 
 h1 {
@@ -15,18 +16,31 @@ h6 {
 }
 
 #main {
-	
+	background-color:#FFF;
 }
 
 #nav {
+	background-color:#000;
+	color:#FFF;
+}
+
+#navitem {
 	
 }
 
-#nav:hover {
-	
+#navitem:hover {
+	background-color:#FFF;
+	color:#000;
 }
 
+#header {
+	background-color:#DDD;
+}
 
 #footer {
+	background-color:#EEE;
+}
+
+#footertext {
 	
 }
