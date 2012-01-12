@@ -4,7 +4,8 @@ body {
 }
 
 h1 {
-	
+	letter-spacing:-2px;
+	font-size:25pt;
 }
 
 h2 {
@@ -29,7 +30,7 @@ h2 {
 	color:#FFF;
 	height:35px;
 	position:relative;
-	top:-37px;
+	top:-38px;
 }
 
 a {
@@ -38,7 +39,10 @@ a {
 }
 
 ul.horizontal {
+	padding-top:9px;
 	list-style-type: none;
+	position:relative;
+	left:-30px;
 }
 
 .navitem {
@@ -54,7 +58,7 @@ ul.horizontal {
 #header {
 	background-color:#DDD;
 	position:relative;
-	top:-21px;
+	top:-22px;
 }
 
 #content {
