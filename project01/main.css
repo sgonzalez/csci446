@@ -12,6 +12,10 @@ h2 {
 	
 }
 
+h3 {
+	
+}
+
 #titlesub {
 	font-size:10pt;
 	color:#888;
@@ -53,22 +57,27 @@ ul.horizontal {
 }
 
 .navitem:hover {
-	background-color:#FFF;
+	padding-top:5px;
+	background-color:#888;
 	color:#000;
+	padding-bottom:5px;
 }
 
 #header {
 	background-color:#DDD;
 	position:relative;
 	top:-22px;
+	padding-left:10px;
 }
 
 #content {
+	padding-left:10px;
 	position:relative;
 	top:-50px;
 }
 
 #footer {
+	clear:both;
 	background-color:#EEE;
 	height:30px;
 }
@@ -77,4 +86,18 @@ ul.horizontal {
 	font-size:9pt;
 	position:relative;
 	top:5px;
+}
+
+#left {
+	float:left;
+}
+
+#right {
+	float:right;
+	background-color:#EEF;
+	position:relative;
+	top:-45px;
+	width:340px;
+	height:80px;
+	margin-right:10px;
 }
