@@ -27,6 +27,9 @@ h2 {
 #nav {
 	background-color:#000;
 	color:#FFF;
+	height:35px;
+	position:relative;
+	top:-37px;
 }
 
 a {
@@ -50,6 +53,13 @@ ul.horizontal {
 
 #header {
 	background-color:#DDD;
+	position:relative;
+	top:-21px;
+}
+
+#content {
+	position:relative;
+	top:-50px;
 }
 
 #footer {
