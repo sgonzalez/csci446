@@ -17,6 +17,9 @@ h6 {
 
 #main {
 	background-color:#FFF;
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 #nav {
@@ -24,11 +27,15 @@ h6 {
 	color:#FFF;
 }
 
-#navitem {
+ul.horizontal {
 	
 }
 
-#navitem:hover {
+.navitem {
+	
+}
+
+.navitem:hover {
 	background-color:#FFF;
 	color:#000;
 }
