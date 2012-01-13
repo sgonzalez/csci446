@@ -8,14 +8,6 @@ h1 {
 	font-size:25pt;
 }
 
-h2 {
-	
-}
-
-h3 {
-	
-}
-
 #titlesub {
 	font-size:10pt;
 	color:#888;
@@ -23,7 +15,7 @@ h3 {
 
 #main {
 	background-color:#FFF;
-	width:900px;
+	width:950px;
 	margin-left:auto;
 	margin-right:auto;
 	border:1px solid;
