@@ -68,6 +68,7 @@ ul.horizontal {
 	position:relative;
 	top:-22px;
 	padding-left:10px;
+	height:70px;
 }
 
 #content {
@@ -90,6 +91,7 @@ ul.horizontal {
 
 #left {
 	float:left;
+	height:115px;
 }
 
 #right {

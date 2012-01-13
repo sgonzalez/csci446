@@ -14,7 +14,7 @@
 	<div id="main">
 		<div id="header">
 		<h1 style="position:relative; top:5px;">The Magic Life Figure-Outer!</h1>
-		<span style="position:relative; top:-18px;" id="titlesub">Figuring out your life for you, so you don't have to...</span>
+		<span style="position:relative; top:-18px;" id="titlesub">Figuring out your life for you, so you don't have to…</span>
 		</div>
 		
 		<div id="nav">
@@ -36,17 +36,39 @@
 		
 		<div id="left">
 		<form>
-		How do you feel today? <input type="text" name="today" id="form1"><br>
-		How would you like to feel?<br>
-		(choose all that apply)
-		<select name="future" size="4">
-			<option value="1">Comfortably numb</option>
-			<option value="2">Grumpy as poop, you jerk</option>
-			<option value="3">Happy like I'm on controlled substances</option>
-			<option value="4">Normal. Absolutely Normal.</option>
-		</select>
-		<br>
-		<input type="button" value="Feel me!" onClick="submitButton()">
+		<!-- I am such a bad person! -->
+		<table border="0">
+			<tr>
+				<td>
+					How do you feel today?
+				</td>
+				<td>
+					<input type="text" name="today" id="form1"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					How would you like to feel?<br>
+					(choose all that apply)
+				</td>
+				<td>
+					<select name="future" size="4">
+						<option value="1">Comfortably numb</option>
+						<option value="2">Grumpy as poop, you jerk</option>
+						<option value="3">Happy like I'm on controlled substances</option>
+						<option value="4">Normal. Absolutely Normal.</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<input type="button" value="Feel me!" onClick="submitButton()">
+				</td>
+			</tr>
+		</table>
 		</form>
 		</div>
 		
