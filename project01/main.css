@@ -36,6 +36,10 @@ a {
 	color:#FFF;
 }
 
+a:hover {
+	color:#000;
+}
+
 ul.horizontal {
 	padding-top:9px;
 	list-style-type: none;
