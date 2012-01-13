@@ -87,14 +87,14 @@ ul.horizontal {
 
 #left {
 	float:left;
-	height:115px;
+	height:35px;
 }
 
 #right {
 	float:right;
 	background-color:#EEF;
 	position:relative;
-	top:-45px;
+	top:-78px;
 	width:340px;
 	height:80px;
 	margin-right:10px;

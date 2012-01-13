@@ -36,39 +36,23 @@
 		
 		<div id="left">
 		<form>
-		<!-- I am such a bad person! -->
-		<table border="0">
-			<tr>
-				<td>
-					How do you feel today?
-				</td>
-				<td>
-					<input type="text" name="today" id="form1"><br>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					How would you like to feel?<br>
-					(choose all that apply)
-				</td>
-				<td>
-					<select multiple name="future" size="4" style="margin-top:10px; position:relative; top:7px;">
-						<option value="1">Comfortably numb</option>
-						<option value="2">Grumpy as poop, you jerk</option>
-						<option value="3">Happy like I'm on controlled substances</option>
-						<option value="4">Normal. Absolutely Normal.</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					&nbsp;
-				</td>
-				<td>
-					<input style="margin-top:20px;" type="button" value="Feel me!" onClick="submitButton()">
-				</td>
-			</tr>
-		</table>
+		
+		<label for="today" style="margin-right:28px;">How do you feel today?</label>
+		<input type="text" name="today" id="form1"><br>
+		
+		<label for="future" style="position:relative; top:-30px;">How would you like to feel?</label>
+		<!--label style="position:relative; top:17px; left:-200px; padding-right:-30px;">(choose all that apply)</label-->
+		
+		<select multiple name="future" size="4" style="margin-top:15px; position:relative; top:7px;">
+			<option value="1">Comfortably numb</option>
+			<option value="2">Grumpy as poop, you jerk</option>
+			<option value="3">Happy like I'm on controlled substances</option>
+			<option value="4">Normal. Absolutely Normal.</option>
+		</select>
+		<span style="position:relative; top:-10px; left:-435px;">(choose all that apply)</span>
+		<br>
+		<input style="margin-left:200px; margin-top:25px;" type="button" value="Feel me!" onClick="submitButton()">
+					
 		</form>
 		</div>
 		
