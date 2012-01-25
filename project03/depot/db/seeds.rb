@@ -11,6 +11,6 @@ Product.delete_all
 # . . .
 Product.create(title: 'Super Book',
 description:%{<p>This book is a book that teaches you.<p>},
-image_url: 'ruby.jpg',
+image_url: 'http://cdn.dailyclipart.net/wp-content/uploads/medium/Book4.jpg',
 price: 49.95)
 # . . .
