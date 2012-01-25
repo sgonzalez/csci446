@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+Product.delete_all
+
+Product.create(title: 'Super Book', description: %{<p>This book is a book that teaches you how to read tests and remember to remove dummy data during production runs and blah blah lorem ipsub dolor sit amet. <p>}, image_url: 'ruby.jpg', price 49.95)
