@@ -11,6 +11,11 @@ Product.delete_all
 # . . .
 Product.create(title: 'Super Book',
 description:%{<p>This book is a book that teaches you.<p>},
-image_url: 'http://cdn.dailyclipart.net/wp-content/uploads/medium/Book4.jpg',
+image_url: 'http://upload.wikimedia.org/wikipedia/en/1/13/Address_Book_Icon.png',
 price: 49.95)
+# . . .
+Product.create(title: 'Kleenex',
+description:%{<p>Makes blowing your nose very <i>easy</i><p>},
+image_url: 'http://moneysavingmom.com/wp-content/uploads/2010/03/211_kleenex.jpg',
+price: 10.00)
 # . . .
