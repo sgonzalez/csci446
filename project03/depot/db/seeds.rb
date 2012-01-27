@@ -15,7 +15,7 @@ image_url: 'http://upload.wikimedia.org/wikipedia/en/1/13/Address_Book_Icon.png'
 price: 49.95)
 # . . .
 Product.create(title: 'Kleenex',
-description:%{<p>Makes blowing your nose <i>very</i> <b>easy</b>. I like to use fancy HTML text formating in this description. Kleenex are very usefull when you are sick, they start out nice and clean and then they turn gooey and disgusting; YUCK!<p>},
+description:%{<p>Makes blowing your nose <i>very</i> <b>easy</b>. I like to use fancy HTML text formating in this description. Kleenex are very useful when you are sick, they start out nice and clean and then they turn gooey and disgusting; YUCK!<p>},
 image_url: 'http://moneysavingmom.com/wp-content/uploads/2010/03/211_kleenex.jpg',
 price: 10.00)
 # . . .
