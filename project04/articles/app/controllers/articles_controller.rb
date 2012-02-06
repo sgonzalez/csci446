@@ -42,6 +42,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
 
+    @article.creation = Date.today
+    @article.edits = 0
+
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }

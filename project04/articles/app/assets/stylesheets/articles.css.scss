@@ -3,12 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table {
+ 	border-collapse: collapse; 
 	border:1px solid black;
 	width:900px;
 	margin-top:10px;
 	
 	th {
 		background-color:#DDD;
+	}
+	
+	th, td {
+		border-right:1px solid black
 	}
 }
 
