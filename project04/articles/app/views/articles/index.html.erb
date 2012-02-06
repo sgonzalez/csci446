@@ -1,6 +1,9 @@
 <h1>All the World's Articles</h1>
 
+<div id="newLink">
+<%= link_to image_tag('icons/add.png'), new_article_path %>
 <%= link_to 'Create an Article', new_article_path %>
+</div>
 
 <table>
   <tr>
@@ -8,9 +11,6 @@
     <th>Author Name</th>
     <th>Body</th>
     <th>Creation Date</th>
-    <th>Edits</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -18,12 +18,13 @@
   <tr>
     <td><%= article.title %></td>
     <td><%= article.author %></td>
-    <td><%= article.body %></td>
-    <td><%= article.creation %></td>
-    <td><%= article.edits %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= truncate(article.body, length: 65) %></td>
+    <td><%= article.creation.strftime("%A, %b. %d %Y") %></td>
+    <td class="edge">
+		<%= link_to image_tag('icons/magnifier.png'), article %>
+		<%= link_to image_tag('icons/book_edit.png'), edit_article_path(article) %>
+    	<%= link_to image_tag('icons/delete.png'), article, confirm: 'Are you sure?', method: :delete %>
+	</td>
   </tr>
 <% end %>
 </table>
