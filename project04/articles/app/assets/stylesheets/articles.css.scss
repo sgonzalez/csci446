@@ -2,18 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tablewrapper {
+	height:265px;
+	overflow:auto;
+}
+
 table {
- 	border-collapse: collapse; 
+ 	border-collapse:collapse; 
 	border:1px solid black;
 	width:900px;
 	margin-top:10px;
 	
 	th {
-		background-color:#DDD;
+		background-color:#CCC;
 	}
 	
 	th, td {
 		border-right:1px solid black
+	}
+	
+	td {
+		padding-top:4px;
+		padding-bottom:4px;
+	}
+	
+	.list_line_even {
+		background:#fff;
+	}
+	
+	.list_line_odd {
+		background:#eee;
 	}
 }
 
