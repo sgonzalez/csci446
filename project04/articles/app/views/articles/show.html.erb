@@ -9,8 +9,8 @@
 <%= link_to image_tag('icons/delete.png'), edit_article_path(@article) %>
 <%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete %>
 
-<%= link_to image_tag('icons/email.png'), edit_article_path(@article) %>
-<%= link_to 'email', edit_article_path(@article) %>
+<%= mail_to "santiago@articl.es", image_tag('icons/email.png') %>
+<%= mail_to "santiago@articl.es", 'email' %>
 
 <br><br>
 
