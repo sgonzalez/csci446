@@ -24,10 +24,6 @@
     <%= f.text_area :body %>
   </div>
   <div class="actions">
-	<% if @article.edits = 0 %>
     <%= f.submit 'Create!' %>
-	<% else %>
-	<%= f.submit 'Save Changes' %>
-	<% end %>
   </div>
 <% end %>
