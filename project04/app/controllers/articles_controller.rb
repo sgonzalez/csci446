@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-    @article.increment!(:edits);
+    @article.increment!(:edits)
   end
 
   # POST /articles
