@@ -28,7 +28,22 @@ div {
     margin-bottom: 10px; } }
 
 #notice {
-  color: green; }
+  color:#000 !important;
+  border:2px solid green;
+  padding:1em;
+  margin-bottom:2em;
+  background-color:#f0f0f0;
+  font:bold smaller sans-serif;
+}
+
+#error {
+  color:#000 !important;
+  border:2px solid red;
+  padding:1em;
+  margin-bottom:2em;
+  background-color:#f0f0f0;
+  font:bold smaller sans-serif;
+}
 
 .field_with_errors {
   padding: 2px;
