@@ -1,7 +1,9 @@
 <% content_for :subtitles do %>...what's "Articl" in Spanish anyway?<% end %>
 
 
-<p id="notice"><%= notice %></p>
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
 
 <%= link_to image_tag('icons/arrow_left.png'), articles_path %>
 <%= link_to 'list all articles', articles_path %>

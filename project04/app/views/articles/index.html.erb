@@ -1,6 +1,10 @@
 <% content_for :subtitles do %>...with a name .com hipsters love!<% end %>
 
 
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
 <h1>All the World's Articles</h1>
 
 <div id="newLink">
