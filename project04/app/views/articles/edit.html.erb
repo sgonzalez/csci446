@@ -10,4 +10,4 @@
 <br><br>
 <h1>Editing "<%= @article.title %>"</h1>
 <br><br>
-<%= render 'editform' %>
+<%= render :partial => 'form', :locals => { :edit => true } %>
