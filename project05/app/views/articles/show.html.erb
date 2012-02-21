@@ -1,0 +1,30 @@
+<% content_for :subtitles do %>...what's "Articl" in Spanish anyway?<% end %>
+
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+<%= link_to image_tag('icons/arrow_left.png'), articles_path, :title => "Click to go back" %>
+<%= link_to 'list all articles', articles_path, :title => "Click to go back" %>
+
+<%= link_to image_tag('icons/book_edit.png'), edit_article_path(@article), :title => "Click to edit the article" %>
+<%= link_to 'edit', edit_article_path(@article), :title => "Click to edit the article" %>
+
+<%= link_to image_tag('icons/delete.png'), edit_article_path(@article), :title => "Click to delete the article" %>
+<%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete, :title => "Click to delete the article" %>
+
+<%= mail_to "", image_tag('icons/email.png'), subject: @article.title, body: article_url, :title => "Click to email the article" %>
+<%= mail_to "", 'email', subject: @article.title, body: article_url, :title => "Click to email the article" %>
+
+<br><br>
+
+<h1><%= @article.title %></h1>
+
+<br><br>
+  By <%= @article.author %>. <%= pluralize(@article.edits, 'edit') %> since <%= @article.creation.strftime("%A, %b. %d %Y") %>
+<br><br>
+
+<p>
+  <%= @article.body %>
+</p>
