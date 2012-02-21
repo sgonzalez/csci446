@@ -25,9 +25,9 @@
   </div>
   <div class="actions">
 	<% if edit %>
-		<%= f.submit 'Save Changes' %>
+		<%= f.submit 'Save Changes', :title => "Click to save the article" %>
 	<% else %>
-    	<%= f.submit 'Create!' %>
+    	<%= f.submit 'Create!', :title => "Click to save the article" %>
 	<% end %>
   </div>
 <% end %>

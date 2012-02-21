@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  
+  before_filter :set_return, :only => :edit
+  
   # GET /articles
   # GET /articles.json
   def index
@@ -64,7 +67,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to session[:return_url], notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -84,4 +87,11 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+    def set_return
+      session[:return_url] = request.referer
+    end
+  
 end
