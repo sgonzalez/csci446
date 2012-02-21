@@ -12,7 +12,8 @@
 	<%= link_to 'Create an Article', new_article_path, :title => "Click to make a new article" %>
 </div>
 
-<div class="tablewrapper">
+<%= will_paginate @articles %>
+
 	<table>
   		<thead>
   			<tr>
@@ -39,8 +40,9 @@
 			<% end %>
   		</tbody>
 	</table>
-</div>
 
 <br />
 
 <%= pluralize(@articles.count, "article") + "." %>
+
+<%= will_paginate @articles %>
