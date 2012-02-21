@@ -1,6 +1,13 @@
-<h1>Editing author</h1>
+<% content_for :subtitles do %>...sorry, no catchy subtitle here<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @author %> |
-<%= link_to 'Back', authors_path %>
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+<%= link_to image_tag('icons/arrow_left.png'), authors_path, :title => "Click to go back" %>
+<%= link_to 'back', authors_path, :title => "Click to go back" %>
+<br><br>
+<h1>Editing "<%= @author.name %>"</h1>
+<br><br>
+<%= render :partial => 'form', :locals => { :edit => true } %>

@@ -1,3 +1,44 @@
 // Place all the styles related to the Authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+ 	border-collapse:collapse; 
+	border:1px solid black;
+	width:900px;
+	margin-top:10px;
+	
+	th {
+		background-color:#CCC;
+	}
+	
+	th, td {
+		border-right:1px solid black
+	}
+	
+	td {
+		padding-top:4px;
+		padding-bottom:4px;
+	}
+	
+	.list_line_even {
+		background:#fff;
+	}
+	
+	.list_line_odd {
+		background:#eee;
+	}
+	
+}
+
+h1 {
+	display:inline;
+}
+
+#newLink {
+	float:right;
+}
+
+.edge {
+	width:60px;
+}

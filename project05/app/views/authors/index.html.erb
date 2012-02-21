@@ -1,23 +1,35 @@
-<h1>Listing authors</h1>
+<% content_for :subtitles do %>...sorry, no catchy subtitle here<% end %>
+
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+<h1>Listing Authors</h1>
+
+<div id="newLink">
+	<%= link_to image_tag('icons/add.png'), new_author_path, :title => "Click to make a new author" %>
+	<%= link_to 'Create an Author', new_author_path, :title => "Click to make a new author" %>
+</div>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @authors.each do |author| %>
-  <tr>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= author.name %></td>
-    <td><%= link_to 'Show', author %></td>
-    <td><%= link_to 'Edit', edit_author_path(author) %></td>
-    <td><%= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="edge">
+		<%= link_to image_tag('icons/magnifier.png'), author, :title => "Click to view the author" %>
+		<%= link_to image_tag('icons/book_edit.png'), edit_author_path(author), :title => "Click to edit the author" %>
+			<%= link_to image_tag('icons/delete.png'), author_path(author), method: :delete, confirm: 'Are you sure?', :title => "Click to delete the author" %>
+	</td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Author', new_author_path %>
+<%= pluralize(@authors.count, "author") + "." %>

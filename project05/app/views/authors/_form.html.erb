@@ -20,6 +20,10 @@
     <%= f.file_field :photo %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+  <% if edit %>
+		<%= f.submit 'Save Changes', :title => "Click to save the author" %>
+	<% else %>
+  	<%= f.submit 'Create!', :title => "Click to save the author" %>
+	<% end %>
   </div>
 <% end %>
