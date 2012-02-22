@@ -26,5 +26,5 @@
 <br><br>
 
 <p>
-  <%= @article.body %>
+  <%= simple_format(h(@article.body)) %>
 </p>
