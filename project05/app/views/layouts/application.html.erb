@@ -13,6 +13,11 @@
 	<h2><!--%= ['...with a name .com hipsters love!', '...what\'s "Articl" in Spanish anyway?', '...my cousin works for Bit.ly', '...not just for the country of Spain'].sample %--><%= yield :subtitles %></h2>
 </div>
 
+<div id="menubar">
+	<span class="baritem"><%= link_to 'Articles', articles_path, :title => "Click to view articles" %></span>
+	<span class="baritem"><%= link_to 'Authors', authors_path, :title => "Click to view authors" %></span>
+</div>
+
 <div id="body">
 	<%= yield %>
 </div>

@@ -39,6 +39,22 @@ body {
 	padding-right:20px;
 }
 
+#menubar {
+	text-align:center;
+	margin:0 auto;
+	width:100%;
+	height:30px;
+	background-color:#EEE;
+	margin-bottom:30px;
+	
+	.baritem {
+		position:relative;
+		top:5px;
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
+
 .paginatewrapper {
 	text-align:center;
 	margin:0 auto;
