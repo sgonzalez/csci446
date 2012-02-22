@@ -19,10 +19,10 @@
 
 <br><br>
 
-<h1><%= @article.title %></h1>
+<h1><%=h @article.title %></h1>
 
 <br><br>
-  By <%= @article.author %>. <%= pluralize(@article.edits, 'edit') %> since <%= @article.creation.strftime("%A, %b. %d %Y") %>
+  By <%=h @article.author %>. <%= pluralize(@article.edits, 'edit') %> since <%= @article.creation.strftime("%A, %b. %d %Y") %>
 <br><br>
 
 <p>

@@ -16,8 +16,10 @@
 <%= link_to 'delete', @author, confirm: 'Are you sure?', method: :delete, :title => "Click to delete the author" %>
 
 <br><br>
-<h1><%= @author.name %></h1>
+<h1><%=h @author.name %></h1>
 <br><br>
 <%= image_tag @author.photo.url, { :style => "width:200px;"} %>
 <br><br>
-Articles written by <%= @author.name %>:
+Articles written by <%=h @author.name %>:
+<ul>
+</ul>
