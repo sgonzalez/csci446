@@ -37,3 +37,4 @@ gem 'jquery-rails'
 
 gem 'will_paginate'
 gem 'paperclip'
+gem "haml"

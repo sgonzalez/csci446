@@ -1,0 +1,31 @@
+- content_for :subtitles do
+  \...with a name .com hipsters love!
+- flash.each do |key, msg|
+  = content_tag :div, msg, :id => key
+%h1 All the World's Articles
+#newLink
+  = link_to image_tag('icons/add.png'), new_article_path, :title => "Click to make a new article"
+  = link_to 'Create an Article', new_article_path, :title => "Click to make a new article"
+.paginatewrapper= will_paginate @articles
+%table
+  %thead
+    %tr
+      %th Title
+      %th Author Name
+      %th Body
+      %th Creation Date
+      %th
+  %tbody
+    - @articles.each do |article|
+      %tr{:class => cycle('list_line_odd', 'list_line_even')}
+        %td= h article.title
+        %td= h article.author
+        %td= h truncate(article.body, length: 65)
+        %td= article.creation.strftime("%A, %b. %d %Y")
+        %td.edge
+          = link_to image_tag('icons/magnifier.png'), article, :title => "Click to view the article"
+          = link_to image_tag('icons/book_edit.png'), edit_article_path(article), :title => "Click to edit the article"
+          = link_to image_tag('icons/delete.png'), article_path(article), method: :delete, confirm: 'Are you sure?', :title => "Click to delete the article"
+%br/
+= pluralize(@articles.count, "article") + "."
+.paginatewrapper= will_paginate @articles
