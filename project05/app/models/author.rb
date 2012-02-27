@@ -4,6 +4,12 @@ class Author < ActiveRecord::Base
   
   has_attached_file :photo
   
+  has_many :articles
+  
+  def to_s
+    name
+  end
+  
   private
     
     def no_author_named_pat
