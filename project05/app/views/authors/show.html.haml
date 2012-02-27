@@ -19,5 +19,4 @@
 Articles written by #{h @author.name}:
 %ul
   - @author.articles.each do |article|
-    - if article.author == @author
-      %li= h article.title
+    %li= h article.title

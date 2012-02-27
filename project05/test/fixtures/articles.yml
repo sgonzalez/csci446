@@ -2,14 +2,14 @@
 
 one:
   title: MyString
-  author_id: authors(:one)
+  author_id: 1
   body: MyText
   creation: 2012-02-02
   edits: 1
 
 two:
   title: MyString
-  author_id: authors(:one)
+  author_id: 2
   body: MyText
   creation: 2012-02-02
   edits: 1
