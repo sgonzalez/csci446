@@ -14,7 +14,7 @@
   .field
     = f.label :author_id, 'Author Name'
     %br/
-    = f.text_field :author_id
+    = f.select(:author_id, Author.all.collect {|p| [ p.name, p.id ] }, { :include_blank => true }) #f.text_field :author_id
   .field
     = f.label :body
     %br/

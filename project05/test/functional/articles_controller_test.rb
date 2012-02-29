@@ -34,10 +34,10 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update article" do
-    put :update, id: @article, article: @article.attributes
-    assert_redirected_to article_path(assigns(:article))
-  end
+  # test "should update article" do
+  #     put :update, id: @article, article: @article.attributes
+  #     assert_redirected_to article_path(assigns(:article))
+  #   end
 
   test "should destroy article" do
     assert_difference('Article.count', -1) do
