@@ -4,7 +4,7 @@ class Author < ActiveRecord::Base
   
   has_attached_file :photo
   
-  has_many :articles
+  has_many :articles, dependent: :destroy
   
   def to_s
     name
