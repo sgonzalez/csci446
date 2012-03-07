@@ -1,0 +1,21 @@
+1.
+
+2. relative
+
+3. an absolute URL points to the same place no matter what directory you are inside while a relative url points to a directory relative to the current directory.
+Ex.  Absolute: "http://hicaduda.com/mac/index.php" Relative: "mac/index.php"
+
+4.
+
+5.
+
+6.
+
+7.
+
+8.
+
+9.
+
+10.
+
