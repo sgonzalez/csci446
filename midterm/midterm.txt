@@ -5,7 +5,7 @@
 3. An absolute URL points to the same place no matter what directory you are inside while a relative url points to a directory relative to the current directory.
 Ex.  Absolute: "http://hicaduda.com/mac/index.php" Relative: "mac/index.php"
 
-4.
+4. GET, all links generate a GET request
 
 5. Yes request_type=PUT
 
@@ -60,7 +60,7 @@ end
 
 16. Yes
 
-17.
+17. No you do not always need an explicit return. When there is no explicit return value, nil is returned.
 
 18. before_save
     before_create
