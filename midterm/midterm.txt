@@ -1,21 +1,89 @@
-1.
+1. HTTP POST creates a new resource with state consistent with posted content while PUT makes an existing resource assume state consistent with put content
 
-2. relative
+2. Relative
 
-3. an absolute URL points to the same place no matter what directory you are inside while a relative url points to a directory relative to the current directory.
+3. An absolute URL points to the same place no matter what directory you are inside while a relative url points to a directory relative to the current directory.
 Ex.  Absolute: "http://hicaduda.com/mac/index.php" Relative: "mac/index.php"
 
 4.
 
-5.
+5. Yes request_type=PUT
 
-6.
+6. The accesskey attribute that specifies a keyboard shortcut to access the link.
 
-7.
+7. A database in a web application helps persist data. A web browser in a web application is to access the application on a server.
 
-8.
+8. Yes it would contain a body, 200 OK indicates that the request succeeded with the resource being returned in the body of the response.
 
 9.
+class Troll
+	attr_accessor :ugliness, :smelliness, :strength
+
+	def initialize
+		@grunt = "UNGAH"
+	end
+	
+	def set_grunt(g)
+		@grunt = g
+	end
+
+	def speak
+		puts @grunt * 42
+	end
+	
+	def reverse
+		r = @grunt.reverse
+		puts r
+	end
+	
+	def self.propogate
+		t = Troll.new
+		t.set_grunt("eegah")
+	end
+	
+end
 
 10.
+def respond_to?(command)
+	true
+end
 
+11. No, it does not.
+
+12. A boolean.
+
+13. Bang methods are the dangerous version of the non-bang method. They also tell devs that you do not need to save after calling the method and when you call the method there will be a change to the database.
+
+14. Ruby has a dynamic type system. This means that you do not have to declare what type of data a variable will hold, unlike in c where you have to declare a variable's data type.
+
+15. This is a shortcut to create an array of strings: ["master" "rails" "and" "then" "try" "another" "framework" "you'll" "never" "go" "back" ]
+
+16. Yes
+
+17.
+
+18. before_save
+    before_create
+    after_save
+    after_create
+
+19.
+HTTP method   controller action    CRUD operation
+GET				index				read
+GET 			new					read
+POST			create				create
+GET				edit				read
+PUT 			update				update
+DELETE			delete				destroy
+
+20.
+
+21. The development environment is where you create and test all the code to make sure it works. The production environment is what lives on a server that is live and connected to the internet where people can access it.
+
+22.
+
+23. Helper methods are used to DRY your code and keep controller code out of your view code. The application and every controller has a helper file where you write in your helper methods. A good rule of thumb is to use them whenever you have if's or general controller code in your view. They are also super helpful for string manipulation.
+
+24. A join table
+
+25. That many queries are not ok, they take up time. You could reduce the queries by eager loading. Eager loading loads all it can wether it is needed or not.
