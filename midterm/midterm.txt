@@ -70,17 +70,17 @@ end
 19.
 HTTP method   controller action    CRUD operation
 GET				index				read
-GET 			new					read
+GET 			new					Not Applicable
 POST			create				create
-GET				edit				read
+GET				edit				Not Applicable
 PUT 			update				update
-DELETE			delete				destroy
+DELETE			destroy				destroy
 
 20.
 
 21. The development environment is where you create and test all the code to make sure it works. The production environment is what lives on a server that is live and connected to the internet where people can access it.
 
-22.
+22. It is appropriate to have a singular name for a controller when the controller only manages one object. GeocodingController only manages one geocoder while ProtestsController may manage many protests.
 
 23. Helper methods are used to DRY your code and keep controller code out of your view code. The application and every controller has a helper file where you write in your helper methods. A good rule of thumb is to use them whenever you have if's or general controller code in your view. They are also super helpful for string manipulation.
 
