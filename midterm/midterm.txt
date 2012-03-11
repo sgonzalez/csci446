@@ -76,7 +76,7 @@ GET				edit				Not Applicable
 PUT 			update				update
 DELETE			destroy				destroy
 
-20.
+20. Rails "simulates" DELETE and PUT requests so it knows what kind of action to take.
 
 21. The development environment is where you create and test all the code to make sure it works. The production environment is what lives on a server that is live and connected to the internet where people can access it.
 
