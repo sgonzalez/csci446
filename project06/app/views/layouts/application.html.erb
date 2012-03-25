@@ -8,6 +8,17 @@
 </head>
 <body>
 
+	<div id="nav">
+	    <% if current_user %>
+		Logged in as 
+        <%= link_to current_user.name, edit_user_path(current_user.id) %>, ROLE.
+        <%= link_to "Logout", :logout %>
+        <% else %>
+        <%= link_to "Login", :login %> | 
+        <%= link_to "Register", new_user_path %>
+        <% end %>
+	</div>
+
 <%= yield %>
 
 </body>
