@@ -1,0 +1,15 @@
+%h1 Listing users
+%p#notice= notice
+.paginatewrapper= will_paginate @posts
+%table
+  %tr
+    %th Name
+    %th Username
+    %th Last Login
+    %th FUTURE
+  - @users.each do |user|
+    %tr
+      %td= link_to user.name, edit_user_path(user)
+      %td= user.username
+      %td LASTLOGIN
+      %td FUTURE
