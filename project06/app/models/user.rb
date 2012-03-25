@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   
   validates_presence_of :first, :last
   
+  has_attached_file :photo
+  
   def name
     return first+" "+last
   end
