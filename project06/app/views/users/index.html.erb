@@ -2,24 +2,18 @@
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
+	<th>Name</th>
     <th>Username</th>
-    <th>Email</th>
-    <th>First</th>
-    <th>Last</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Last Login</th>
+    <th>FUTURE</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
+	<td><%= link_to user.name, edit_user_path(user) %></td>
     <td><%= user.username %></td>
-    <td><%= user.email %></td>
-    <td><%= user.first %></td>
-    <td><%= user.last %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td>LASTLOGIN</td>
+    <td>FUTURE</td>
   </tr>
 <% end %>
 </table>
