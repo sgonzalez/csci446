@@ -1,14 +1,20 @@
 = form_for(@user, html: { multipart: true}) do |f|
   - if @user.errors.any?
     #error_explanation
-      %h2 Sorry, could not register you:
+      - if @user.new_record?
+        %h2 Sorry, could not register you:
+      - else
+        %h2 Could not save profile:
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
   .field
     = f.label :username
     %br/
-    = f.text_field :username
+    - if @user.new_record?
+      = f.text_field :username
+    - else
+      = f.text_field :username, :disabled => true
   .field
     = f.label :password
     %br/
@@ -30,8 +36,13 @@
     %br/
     = f.text_field :email
   .field
-    = f.label :photo
-    = f.file_field :photo
-  = recaptcha_tags
+    = f.label :photo, { :style => "position:relative; top:-20px;" }
+    = f.file_field :photo, { :style => "position:relative; top:-20px;" }
+    = image_tag @user.photo.url, { :style => "height:50px;" }
+  .field
+    = recaptcha_tags
   .actions
-    = f.submit "Submit"
+    - if @user.new_record?
+      = f.submit "Register"
+    - else
+      = f.submit "Save Changes"
