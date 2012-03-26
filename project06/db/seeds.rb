@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.delete_all
+
+(1..33).each do |i|
+  User.create(username: "administrator", password: "administrator", password_confirmation: "administrator", first: "admin", last: "admin", email: "admin@gamez.com")
+  #Article.create(title: "user#{i}", author: Author.find_or_create_by_username(['Somebody','Fake Guy Jr'].sample), body: "", creation: Date.today,)
+end
