@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  filter_resource_access
+  
   # GET /users
   # GET /users.json
   def index
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user #User.find(params[:id])
   end
 
   # POST /users
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
+      if @user.save && verify_recaptcha(:model => @user)
         format.html { redirect_to :users, notice: 'Welcome back, EEEEEEEK!.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -59,7 +62,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(params[:user]) && verify_recaptcha(:model => @user)
         format.html { redirect_to :users, notice: 'Successfully updated profile.' }
         format.json { head :no_content }
       else
