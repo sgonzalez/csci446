@@ -12,9 +12,9 @@ Role.delete_all
 Role.create(name: "admin")
 Role.create(name: "member")
 
-User.create(username: "administrator", password: "administrator", password_confirmation: "administrator", first: "admin", last: "admin", email: "admin@gamez.com", role_id: Role.find_or_create_by_name("admin").id)
+User.create(username: "administrator", password: "password", password_confirmation: "password", first: "John", last: "Johnson", email: "admin@gamez.com", role_id: Role.find_or_create_by_name("admin").id)
+User.create(username: "member", password: "password", password_confirmation: "password", first: "Andy", last: "Anderson", email: "member@gamez.com", role_id: Role.find_or_create_by_name("member").id)
 
-#(1..33).each do |i|
-  #User.create(username: "administrator", password: "administrator", password_confirmation: "administrator", first: "admin", last: "admin", email: "admin@gamez.com")
-  #Article.create(title: "user#{i}", author: Author.find_or_create_by_username(['Somebody','Fake Guy Jr'].sample), body: "", creation: Date.today,)
-#end
+(1..33).each do |i|
+  User.create(username: "member#{i}", password: "password", password_confirmation: "password", first: ['Member'].sample, last: ['Memberson'].sample, email: "member#{i}@gamez.com", role_id: Role.find_or_create_by_name("member").id)
+end
