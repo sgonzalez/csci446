@@ -36,9 +36,17 @@
     %br/
     = f.text_field :email
   .field
-    = f.label :photo, { :style => "position:relative; top:-20px;" }
-    = f.file_field :photo, { :style => "position:relative; top:-20px;" }
-    = image_tag @user.photo.url, { :style => "height:50px;" }
+    = f.label :role_id, 'Role'
+    %br/
+    = f.select(:role_id, Role.all.collect {|p| [ p.name, p.id ] }, { :include_blank => false })
+  .field
+    - if @user.new_record?
+      = f.label :photo
+      = f.file_field :photo
+    - else
+      = f.label :photo, { :style => "position:relative; top:-20px;" }
+      = f.file_field :photo, { :style => "position:relative; top:-20px;" }
+      = image_tag(@user.photo.url, { :style => "height:50px;" }) unless @user.new_record?
   .field
     = recaptcha_tags
   .actions

@@ -1,4 +1,6 @@
 Gamez::Application.routes.draw do
+  resources :roles
+
   resources :users, :user_sessions
   
   match 'login' => 'user_sessions#new', :as => :login
