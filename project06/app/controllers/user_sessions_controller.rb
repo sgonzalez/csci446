@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to :users, notice: "Welcome back, \"+ current_user.first + \"." }
+        format.html { redirect_to :users, notice: "Welcome back, "+ @user_session.user.name + "." }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }

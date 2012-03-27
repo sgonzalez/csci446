@@ -16,12 +16,7 @@ class User < ActiveRecord::Base
   end
   
   def role_symbols
-    #roles to sym
-    if self.role == Role.find_or_create_by_name("member")
-      [:member]
-    else
-      [:admin]
-    end
+    [role.name.downcase.to_sym]
   end
   
   def name
