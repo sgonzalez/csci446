@@ -6,6 +6,11 @@ Gamez::Application.routes.draw do
   match 'login' => 'user_sessions#new', :as => :login
   match 'register' => 'users#new', :as => :register
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  
+  namespace "admin" do
+    resources :roles
+    root controller: 'admin', action: 'index'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

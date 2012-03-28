@@ -1,4 +1,4 @@
-class RolesController < ApplicationController
+class Admin::RolesController < Admin::AdminController
   
   #############before_destroy :check_not_reserved
   
