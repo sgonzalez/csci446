@@ -1,7 +1,5 @@
 class Admin::RolesController < Admin::AdminController
   
-  #############before_destroy :check_not_reserved
-  
   # GET /roles
   # GET /roles.json
   def index

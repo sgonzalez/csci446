@@ -9,7 +9,7 @@ Gamez::Application.routes.draw do
   
   namespace "admin" do
     resources :roles
-    root controller: 'admin', action: 'index'
+    root controller: 'users', action: 'index'
   end
 
   # The priority is based upon order of creation:

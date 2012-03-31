@@ -25,16 +25,4 @@ class UserSessionsController < ApplicationController
       end
     end
   end
-  
-  # DELETE /user_sessions/1
-  # DELETE /user_sessions/1.json
-  def destroy
-    @user_session = UserSession.find
-    @user_session.destroy
-
-    respond_to do |format|
-      format.html { redirect_to :users, notice: 'Goodbye!' }
-      format.json { head :no_content }
-    end
-  end
 end

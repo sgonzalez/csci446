@@ -1,0 +1,53 @@
+= form_for(@user, html: { multipart: true}) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      - if @user.new_record?
+        %h2 Sorry, could not register you:
+      - else
+        %h2 Could not save profile:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :username
+    %br/
+    = f.text_field :username
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation
+  .field
+    = f.label :first, "First Name"
+    %br/
+    = f.text_field :first
+  .field
+    = f.label :last, "Last Name"
+    %br/
+    = f.text_field :last
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :role_id, 'Role'
+    %br/
+    = f.select(:role_id, Role.all.collect {|p| [ p.name, p.id ] }, { :include_blank => false })
+  .field
+    - if @user.new_record?
+      = f.label :photo
+      = f.file_field :photo
+    - else
+      = f.label :photo, { :style => "position:relative; top:-20px;" }
+      = f.file_field :photo, { :style => "position:relative; top:-20px;" }
+      = image_tag(@user.photo.url, { :style => "height:50px;" }) unless @user.new_record?
+  .field
+    = recaptcha_tags
+  .actions
+    - if @user.new_record?
+      = f.submit "Register"
+    - else
+      = f.submit "Save Changes"
