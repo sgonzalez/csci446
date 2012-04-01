@@ -5,6 +5,8 @@ authorization do
     has_permission_on :admin_users, :to => [:index, :show, :new, :create, :edit, :update, :destroy]
     has_permission_on :admin_roles, :to => [:index, :show, :new, :create, :edit, :update, :destroy]
     has_permission_on :user_sessions, :to => [:destroy]
+    
+    has_permission_on :users, :to => [:index]
   end
   
   role :guest do
