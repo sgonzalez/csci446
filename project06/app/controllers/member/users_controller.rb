@@ -1,7 +1,5 @@
 class Member::UsersController < Member::MemberController
-  
-  filter_resource_access
-  
+    
   # GET /users
   # GET /users.json
   def index
@@ -15,7 +13,7 @@ class Member::UsersController < Member::MemberController
 
   # GET /users/1/edit
   def edit
-    @user = current_user #User.find(params[:id])
+    @user = current_user
   end
 
   # PUT /users/1

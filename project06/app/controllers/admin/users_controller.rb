@@ -1,7 +1,5 @@
 class Admin::UsersController < Admin::AdminController
   
-  filter_resource_access
-  
   # GET /users
   # GET /users.json
   def index

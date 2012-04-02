@@ -7,6 +7,11 @@ Gamez::Application.routes.draw do
   match 'register' => 'users#new', :as => :register
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
+  namespace 'member' do
+    resources :users, :only => [:edit, :update]
+    match 'me' => 'users#edit'
+  end
+  
   namespace "admin" do
     resources :roles
     resources :users

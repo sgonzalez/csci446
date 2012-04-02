@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   acts_as_authentic
+  # acts_as_authentic do |config|
+  #   config.min_pas
+  # end
   
   belongs_to :role
   
