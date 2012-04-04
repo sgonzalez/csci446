@@ -10,6 +10,7 @@ Gamez::Application.routes.draw do
   namespace 'member' do
     resources :users
     match 'me' => 'users#edit'
+    #root controller: 'games', action: 'index'
   end
   
   namespace "admin" do
