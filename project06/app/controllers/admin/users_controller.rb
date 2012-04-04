@@ -45,7 +45,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @user.save && verify_recaptcha(:model => @user)
-        format.html { redirect_to :users, notice: "Welcome, "+ @user.name + "." }
+        format.html { redirect_to :admin_users, notice: "Welcome, "+ @user.name + "." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -61,24 +61,12 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @user.update_attributes(params[:user]) && verify_recaptcha(:model => @user)
-        format.html { redirect_to :users, notice: 'Successfully updated profile.' }
+        format.html { redirect_to :admin_users, notice: 'Successfully updated profile.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
     end
   end
 end
