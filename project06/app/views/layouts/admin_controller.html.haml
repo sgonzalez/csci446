@@ -11,6 +11,7 @@
         Logged in as
         \#{link_to current_user.name, edit_user_path(current_user.id)},
         = current_user.role.name + '.'
+				Admin links to admin home
         \#{link_to "Logout", :logout}
       - else
         = link_to "Login", :login

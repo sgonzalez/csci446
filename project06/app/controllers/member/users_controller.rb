@@ -11,7 +11,7 @@ class Member::UsersController < Member::MemberController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user]) && verify_recaptcha(:model => @user)
+      if @user.update_attributes(params[:user])
         format.html { redirect_to :users, notice: 'Successfully updated profile.' }
         format.json { head :no_content }
       else

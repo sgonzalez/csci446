@@ -44,8 +44,6 @@
       = f.label :photo, { :style => "position:relative; top:-20px;" }
       = f.file_field :photo, { :style => "position:relative; top:-20px;" }
       = image_tag(@user.photo.url, { :style => "height:50px;" }) unless @user.new_record?
-  .field
-    = recaptcha_tags
   .actions
     - if @user.new_record?
       = f.submit "Register"

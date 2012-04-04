@@ -33,7 +33,7 @@ class Admin::UsersController < Admin::AdminController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(params[:user]) && verify_recaptcha(:model => @user)
+      if @user.update_attributes(params[:user])
         format.html { redirect_to :admin_users, notice: 'Successfully updated profile.' }
         format.json { head :no_content }
       else
