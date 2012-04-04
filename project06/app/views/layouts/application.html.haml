@@ -11,6 +11,7 @@
         Logged in as
         \#{link_to current_user.name, member_me_path},
         = current_user.role.name + '.'
+				My games links to my games
         \#{link_to "Logout", :logout}
       - else
         = link_to "Login", :login
