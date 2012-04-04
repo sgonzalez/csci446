@@ -1,10 +1,7 @@
 = form_for(@user, html: { multipart: true}) do |f|
   - if @user.errors.any?
     #error_explanation
-      - if @user.new_record?
-        %h2 Sorry, could not register you:
-      - else
-        %h2 Could not save profile:
+      %h2 Sorry, could not register you:
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
@@ -43,7 +40,4 @@
   .field
     = recaptcha_tags
   .actions
-    - if @user.new_record?
-      = f.submit "Register"
-    - else
-      = f.submit "Save Changes"
+    = f.submit "Register"

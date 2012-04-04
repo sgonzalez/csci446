@@ -11,12 +11,15 @@
         Logged in as
         \#{link_to current_user.name, edit_user_path(current_user.id)},
         = current_user.role.name + '.'
-				My games links to my games
-				Admin links to admin home
+        My games links to my games
+        Admin links to admin home
         \#{link_to "Logout", :logout}
       - else
         = link_to "Login", :login
         |
         \#{link_to "Register", new_user_path}
     add a bar here
+    %p#notice= flash[:notice]
+    %p#warning= flash[:warning]
+    %p#error= flash[:error]
     = yield
