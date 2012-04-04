@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328182447) do
+ActiveRecord::Schema.define(:version => 20120404181207) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120328182447) do
     t.datetime "photo_updated_at"
     t.integer  "role_id"
     t.datetime "last_login_at"
+    t.datetime "current_login_at"
   end
 
 end
