@@ -9,15 +9,21 @@
     #nav
       - if current_user
         Logged in as
-        \#{link_to current_user.name, member_me_path},
+        - if current_user.role.name == "admin"
+          \#{link_to current_user.name, edit_admin_user_path(current_user.id)},
+        - else
+          \#{link_to current_user.name, member_me_path},
         = current_user.role.name + '.'
-        My games links to my games
-        \#{link_to "Logout", :logout}
+        My Games
+        = link_to "Logout", :logout
       - else
         = link_to "Login", :login
         |
-        \#{link_to "Register", new_user_path}
-    %p#notice= flash[:notice]
-    %p#warning= flash[:warning]
-    %p#error= flash[:error]
-    = yield
+        = link_to "Register", new_user_path
+    #title
+      %h1 Gamez
+    #body
+      %p#notice= flash[:notice]
+      %p#warning= flash[:warning]
+      %p#error= flash[:error]
+      = yield

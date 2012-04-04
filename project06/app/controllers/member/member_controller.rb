@@ -1,6 +1,8 @@
 class Member::MemberController < ApplicationController
   before_filter :require_user
   
+  layout 'member'
+  
   filter_access_to :all
   
   def index
