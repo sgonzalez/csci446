@@ -18,10 +18,9 @@
         = link_to "Logout", :logout
       - else
         = link_to "Login", :login
-        |
         = link_to "Register", new_user_path
     #title
-      %h1 Gamez
+      %h1= link_to "Gamez", root_path
     #body
       %p#notice= flash[:notice]
       %p#warning= flash[:warning]

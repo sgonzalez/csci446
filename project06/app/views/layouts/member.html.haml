@@ -13,7 +13,7 @@
       = link_to "My Games", :member_root
       \#{link_to "Logout", :logout}
     #title
-      %h1 Gamez : Member
+      %h1= link_to("Gamez", root_path) + " : Member"
     #menubar
       -#%span.baritem= link_to 'Games', admin_games_path, :title => "Click to view games"
       %span.baritem= link_to 'Users', admin_users_path, :title => "Click to view users"
