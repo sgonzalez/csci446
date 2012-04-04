@@ -11,10 +11,7 @@
   .field
     = f.label :username
     %br/
-    - if @user.new_record?
-      = f.text_field :username
-    - else
-      = f.text_field :username, :disabled => true
+    = f.text_field :username
   .field
     = f.label :password
     %br/
