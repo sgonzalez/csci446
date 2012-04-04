@@ -36,10 +36,6 @@
     %br/
     = f.text_field :email
   .field
-    = f.label :role_id, 'Role'
-    %br/
-    = f.select(:role_id, Role.all.collect {|p| [ p.name, p.id ] }, { :include_blank => false })
-  .field
     - if @user.new_record?
       = f.label :photo
       = f.file_field :photo

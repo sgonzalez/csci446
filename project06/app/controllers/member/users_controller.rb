@@ -23,7 +23,7 @@ class Member::UsersController < Member::MemberController
 
     respond_to do |format|
       if @user.update_attributes(params[:user]) && verify_recaptcha(:model => @user)
-        format.html { redirect_to :admin_users, notice: 'Successfully updated profile.' }
+        format.html { redirect_to :member_users, notice: 'Successfully updated profile.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

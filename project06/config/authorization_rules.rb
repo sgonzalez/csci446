@@ -10,8 +10,10 @@ authorization do
   end
   
   role :guest do
-    has_permission_on :users, :to => [:new, :create, :index]
+    has_permission_on :users, :to => [:new, :create]
     has_permission_on :user_sessions, :to => [:new, :create]
+    
+    has_permission_on :users, :to => [:index]
   end
 
   role :member do
