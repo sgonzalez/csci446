@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to :users, notice: "Welcome back, "+ @user_session.user.name + "." }
+        format.html { redirect_to home_url(@user_session.user), notice: "Welcome back, "+ @user_session.user.name + "." }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }
@@ -33,6 +33,16 @@ class UserSessionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :users, notice: 'Goodbye!' }
       format.json { head :no_content }
+    end
+  end
+  
+  private
+  
+  def home_url(user)
+    if (user.role.name == "admin")
+      admin_root_url
+    else
+      member_root_url
     end
   end
   
