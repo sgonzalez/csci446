@@ -8,7 +8,7 @@ Gamez::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   
   namespace 'member' do
-    resources :users, :only => [:edit, :update]
+    resources :users
     match 'me' => 'users#edit'
   end
   
