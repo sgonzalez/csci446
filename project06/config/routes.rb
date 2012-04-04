@@ -17,6 +17,7 @@ Gamez::Application.routes.draw do
     resources :roles
     resources :users
     root controller: 'users', action: 'index'
+    #root controller: 'games', action: 'index'
   end
 
   # The priority is based upon order of creation:
