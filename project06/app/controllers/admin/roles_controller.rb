@@ -3,7 +3,7 @@ class Admin::RolesController < Admin::AdminController
   # GET /roles
   # GET /roles.json
   def index
-    @roles = Role.all
+    @roles = Role.all(:order => 'name')
 
     respond_to do |format|
       format.html # index.html.erb
