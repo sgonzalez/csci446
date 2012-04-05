@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   end
   
   belongs_to :role
+  has_many :games
   
   before_save :default_values
   
