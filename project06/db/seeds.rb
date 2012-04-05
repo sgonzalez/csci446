@@ -22,9 +22,13 @@ end
 
 Game.create(title: "Angry Birds", rating: "Amazing", user_id: User.find_or_create_by_username("member").id)
 Game.create(title: "Scrabble", rating: "Good", user_id: User.find_or_create_by_username("member1").id)
+Game.create(title: "Minecraft", rating: "Amazing", user_id: User.find_or_create_by_username("administrator").id)
 Game.create(title: "Some Android Game", rating: "Horrible", user_id: User.find_or_create_by_username("administrator").id)
 Game.create(title: "Another Game", rating: "Meh.", user_id: User.find_or_create_by_username("member").id)
+Game.create(title: "Sim City", rating: "Amazing", user_id: User.find_or_create_by_username("member5").id)
 Game.create(title: "Chess", rating: "Amazing", user_id: User.find_or_create_by_username("member2").id)
 Game.create(title: "Doodle Jump", rating: "Amazing", user_id: User.find_or_create_by_username("administrator").id)
 Game.create(title: "Checkers", rating: "Good", user_id: User.find_or_create_by_username("member3").id)
 Game.create(title: "Uno", rating: "Good", user_id: User.find_or_create_by_username("member5").id)
+Game.create(title: "Roller Coaster Tycoon", rating: "Amazing", user_id: User.find_or_create_by_username("member5").id)
+Game.create(title: "Go", rating: "", user_id: User.find_or_create_by_username("member5").id)
