@@ -67,3 +67,40 @@ body {
 		padding-right:25px;
 	}
 }
+
+.paginatewrapper {
+	text-align:center;
+	margin:0 auto;
+	position:relative;
+	top:-10px;
+}
+
+table {
+ 	border-collapse:collapse; 
+	border:1px solid black;
+	width:900px;
+	margin-top:10px;
+	position:relative;
+	top:-10px;
+	
+	th {
+		background-color:#CCC;
+	}
+	
+	th, td {
+		border-right:1px solid black
+	}
+	
+	td {
+		padding-top:4px;
+		padding-bottom:4px;
+	}
+	
+	.list_line_even {
+		background:#fff;
+	}
+	
+	.list_line_odd {
+		background:#eee;
+	}
+}

@@ -7,7 +7,7 @@
     %th Last Login
     %th FUTURE
   - @users.each do |user|
-    %tr
+    %tr{:class => cycle('list_line_odd', 'list_line_even')}
       %td= link_to user.name, edit_admin_user_path(user)
       %td= user.username
       - if user.last_login_at
