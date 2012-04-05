@@ -20,4 +20,11 @@ User.create(username: "member", password: "password", password_confirmation: "pa
   User.create(username: "member#{i}", password: "password", password_confirmation: "password", first: ['Member'].sample, last: ['Memberson'].sample, email: "member#{i}@gamez.com", role_id: Role.find_or_create_by_name("member").id)
 end
 
-Game.create(title: "Angry Birds", rating: "", user_id: User.find_or_create_by_username("member1").id)
+Game.create(title: "Angry Birds", rating: "Amazing", user_id: User.find_or_create_by_username("member").id)
+Game.create(title: "Scrabble", rating: "Good", user_id: User.find_or_create_by_username("member1").id)
+Game.create(title: "Some Android Game", rating: "Horrible", user_id: User.find_or_create_by_username("administrator").id)
+Game.create(title: "Another Game", rating: "Meh.", user_id: User.find_or_create_by_username("member").id)
+Game.create(title: "Chess", rating: "Amazing", user_id: User.find_or_create_by_username("member2").id)
+Game.create(title: "Doodle Jump", rating: "Amazing", user_id: User.find_or_create_by_username("administrator").id)
+Game.create(title: "Checkers", rating: "Good", user_id: User.find_or_create_by_username("member3").id)
+Game.create(title: "Uno", rating: "Good", user_id: User.find_or_create_by_username("member5").id)
