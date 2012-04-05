@@ -10,17 +10,6 @@ class Admin::GamesController < Admin::AdminController
     end
   end
 
-  # GET /games/1
-  # GET /games/1.json
-  def show
-    @game = Game.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @game }
-    end
-  end
-
   # GET /games/new
   # GET /games/new.json
   def new
@@ -44,7 +33,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to :admin_games, notice: 'Game was successfully created.' }
         format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }
@@ -60,7 +49,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to @admin_game, notice: 'Game was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +65,7 @@ class Admin::GamesController < Admin::AdminController
     @game.destroy
 
     respond_to do |format|
-      format.html { redirect_to games_url }
+      format.html { redirect_to admin_games_url }
       format.json { head :no_content }
     end
   end

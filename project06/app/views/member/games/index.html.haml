@@ -1,5 +1,5 @@
 %h1 My Gamez
-= link_to 'add a new game', new_game_path
+= link_to 'add a new game', new_member_game_path
 .paginatewrapper= will_paginate @games
 %table
   %tr
@@ -8,7 +8,7 @@
     %th Date Added
   - @games.each do |game|
     %tr{:class => cycle('list_line_odd', 'list_line_even')}
-      %td= link_to game.title, edit_game_path(game)
+      %td= link_to game.title, edit_member_game_path(game)
       %td= rating_for_game(game)
       %td= game.created_at.strftime("%A, %b. %d %Y") + " by " + name_for_game(game)
 %br/

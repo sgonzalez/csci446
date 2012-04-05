@@ -1,19 +1,14 @@
+%h1= @games.count
+= link_to 'New Game', new_admin_game_path
 .paginatewrapper= will_paginate @games
 %table
   %tr
     %th Title
     %th Rating
     %th Date Added
-    %th
-    %th
-    %th
   - @games.each do |game|
     %tr{:class => cycle('list_line_odd', 'list_line_even')}
-      %td= game.title
+      %td= link_to game.title, edit_admin_game_path(game)
       %td= rating_for_game(game)
       %td= game.created_at.strftime("%A, %b. %d %Y") + " by " + name_for_game(game)
-      %td= link_to 'Show', game
-      %td= link_to 'Edit', edit_game_path(game)
-      %td= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
 %br/
-= link_to 'New Game', new_game_path

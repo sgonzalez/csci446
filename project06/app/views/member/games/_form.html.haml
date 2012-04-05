@@ -1,4 +1,4 @@
-= form_for(@game) do |f|
+= form_for([:member, @game]) do |f|
   - if @game.errors.any?
     #error_explanation
       %h2
@@ -15,9 +15,5 @@
     = f.label :rating
     %br/
     = f.collection_select :rating, Game::RATINGS, :to_s, :titleize, { :include_blank => true }
-  .field
-    = f.label :user_id, "Creator"
-    %br/
-    = f.select(:user_id, User.all.collect {|p| [ p.name, p.id ] }, { :include_blank => false })
   .actions
-    = f.submit
+    = f.submit "Save"

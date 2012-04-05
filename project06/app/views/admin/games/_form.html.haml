@@ -1,4 +1,4 @@
-= form_for(@game) do |f|
+= form_for([:admin, @game]) do |f|
   - if @game.errors.any?
     #error_explanation
       %h2
@@ -20,4 +20,4 @@
     %br/
     = f.select(:user_id, User.all.collect {|p| [ p.name, p.id ] }, { :include_blank => false })
   .actions
-    = f.submit
+    = f.submit "Save"
