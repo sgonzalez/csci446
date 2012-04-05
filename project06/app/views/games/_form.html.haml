@@ -14,7 +14,7 @@
   .field
     = f.label :rating
     %br/
-    = f.text_field :rating
+    = f.collection_select :rating, Game::RATINGS, :to_s, :titleize, { :include_blank => true }
   .field
     = f.label :user_id, "Creator"
     %br/
