@@ -10,5 +10,7 @@
     %tr{:class => cycle('list_line_odd', 'list_line_even')}
       %td= link_to game.title, edit_admin_game_path(game)
       %td= rating_for_game(game)
-      %td= game.created_at.strftime("%A, %b. %d %Y") + " by " + name_for_game(game)
+      %td
+        = game.created_at.strftime("%A, %b. %d %Y") + " by "
+        = link_to(name_for_game(game), edit_admin_user_path(game.user))
 %br/

@@ -2,8 +2,10 @@
   - if @game.errors.any?
     #error_explanation
       %h2
-        = pluralize(@game.errors.count, "error")
-        prohibited this game from being saved:
+        - if @game.new_record?
+          Could not create game:
+        - else
+          Could not save changes:
       %ul
         - @game.errors.full_messages.each do |msg|
           %li= msg
@@ -14,6 +16,12 @@
   .field
     = f.label :rating
     %br/
-    = f.collection_select :rating, Game::RATINGS, :to_s, :titleize, { :include_blank => true }
+    - Game::RATINGS.each do |rating|
+      %label
+        = f.radio_button(:rating, rating, {:checked => false})
+        = rating.humanize
+        %br/
+    -#= f.label :rating
+    -#= f.collection_select :rating, Game::RATINGS, :to_s, :titleize, { :include_blank => true }
   .actions
     = f.submit "Save"

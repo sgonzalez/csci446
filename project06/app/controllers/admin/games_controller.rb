@@ -49,7 +49,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @admin_game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to :admin_games, notice: "Successfully updated #{@game.title}." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

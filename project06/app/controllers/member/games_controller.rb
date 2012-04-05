@@ -2,7 +2,7 @@ class Member::GamesController < Member::MemberController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.paginate(:page => params[:page], :per_page => 10, :order => 'created_at')
+    @games = Game.paginate(:page => params[:page], :per_page => 10, :order => 'created_at').where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,7 +49,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @member_games, notice: 'Game was successfully updated.' }
+        format.html { redirect_to :member_games, notice: "Successfully updated #{@game.title}." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
