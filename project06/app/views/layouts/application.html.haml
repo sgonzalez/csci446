@@ -11,9 +11,11 @@
         Logged in as
         - if current_user.role.name == "admin"
           \#{link_to current_user.name, edit_admin_user_path(current_user.id)},
+          = current_user.role.name + '.'
+          = link_to "Admin", :admin_root
         - else
           \#{link_to current_user.name, member_me_path},
-        = current_user.role.name + '.'
+          = current_user.role.name + '.'
         My Games
         = link_to "Logout", :logout
       - else
