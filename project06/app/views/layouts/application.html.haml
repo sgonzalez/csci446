@@ -16,7 +16,7 @@
         - else
           \#{link_to current_user.name, member_me_path},
           = current_user.role.name + '.'
-        My Games
+          = link_to "My Games", :member_root
         = link_to "Logout", :logout
       - else
         = link_to "Login", :login
