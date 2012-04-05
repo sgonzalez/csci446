@@ -8,6 +8,7 @@
 
 User.delete_all
 Role.delete_all
+Game.delete_all
 
 Role.create(name: "admin")
 Role.create(name: "member")
@@ -18,3 +19,5 @@ User.create(username: "member", password: "password", password_confirmation: "pa
 (1..33).each do |i|
   User.create(username: "member#{i}", password: "password", password_confirmation: "password", first: ['Member'].sample, last: ['Memberson'].sample, email: "member#{i}@gamez.com", role_id: Role.find_or_create_by_name("member").id)
 end
+
+Game.create(title: "Angry Birds", rating: "", user_id: User.find_or_create_by_username("member1").id)

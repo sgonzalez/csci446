@@ -1,17 +1,17 @@
-%h1 Listing games
+.paginatewrapper= will_paginate @games
 %table
   %tr
     %th Title
     %th Rating
-    %th User
+    %th Date Added
     %th
     %th
     %th
   - @games.each do |game|
-    %tr
+    %tr{:class => cycle('list_line_odd', 'list_line_even')}
       %td= game.title
       %td= game.rating
-      %td= game.user_id
+      %td= game.created_at.strftime("%A, %b. %d %Y") + " by " + name_for_game(game)
       %td= link_to 'Show', game
       %td= link_to 'Edit', edit_game_path(game)
       %td= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
