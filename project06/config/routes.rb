@@ -12,14 +12,13 @@ Gamez::Application.routes.draw do
   namespace 'member' do
     resources :users
     match 'me' => 'users#edit'
-    #root controller: 'games', action: 'index'
+    root controller: 'games', action: 'index'
   end
   
   namespace "admin" do
     resources :roles
     resources :users
-    root controller: 'users', action: 'index'
-    #root controller: 'games', action: 'index'
+    root controller: 'games', action: 'index'
   end
 
   # The priority is based upon order of creation:

@@ -6,7 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
- 		#nav
+    #nav
       Logged in as
       \#{link_to current_user.name, member_me_path},
       = current_user.role.name + '.'
@@ -14,10 +14,6 @@
       \#{link_to "Logout", :logout}
     #title
       %h1= link_to("Gamez", root_path) + " : Member"
-    #menubar
-      -#%span.baritem= link_to 'Games', admin_games_path, :title => "Click to view games"
-      %span.baritem= link_to 'Users', admin_users_path, :title => "Click to view users"
-      %span.baritem= link_to 'Roles', admin_roles_path, :title => "Click to view roles"
     #body
       %p#notice= flash[:notice]
       %p#warning= flash[:warning]

@@ -13,4 +13,13 @@ module GamesHelper
     return n
   end
   
+  def rating_for_game(g)
+    if (g.rating == "")
+      n = "Unrated"
+    else
+      n = g.rating
+    end
+    return n
+  end
+  
 end
