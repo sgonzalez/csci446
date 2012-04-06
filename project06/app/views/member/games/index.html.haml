@@ -12,4 +12,4 @@
       %td= rating_for_game(game)
       %td= game.created_at.strftime("%A, %b. %d %Y") + " by " + name_for_game(game)
 %br/
-I've created x games, x% of which are rated.
+= "I've created " + pluralize(@games.count, "game") + ", #{percent_rated}% of which are rated."

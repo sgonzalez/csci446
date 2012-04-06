@@ -1,4 +1,4 @@
-%h1= @games.count
+%h1= pluralize(@games.count, "Total Game")
 = link_to 'New Game', new_admin_game_path
 .paginatewrapper= will_paginate @games
 %table

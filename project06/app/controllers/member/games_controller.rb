@@ -24,6 +24,10 @@ class Member::GamesController < Member::MemberController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
+    if @game.user != current_user
+      flash[:notice] = "You do not have permission to edit this game!"
+      redirect_to :member_games
+    end
   end
 
   # POST /games
@@ -33,7 +37,7 @@ class Member::GamesController < Member::MemberController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @member_games, notice: 'Game was successfully created.' }
+        format.html { redirect_to :member_games, notice: "Successfully added #{@game.title}." }
         format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }

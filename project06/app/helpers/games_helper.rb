@@ -22,4 +22,10 @@ module GamesHelper
     return n
   end
   
+  def percent_rated()
+    n = Game.count(:all, :conditions => {:user_id => current_user.id, :rating => ''})#.where(:user_id => current_user.id, :rating => "").count
+    d = Game.count(:all, :conditions => {:user_id => current_user.id})
+    return (1-(Float(n)/d))*100
+  end
+  
 end

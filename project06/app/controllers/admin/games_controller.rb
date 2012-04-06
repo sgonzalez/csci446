@@ -33,7 +33,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to :admin_games, notice: 'Game was successfully created.' }
+        format.html { redirect_to :admin_games, notice: "Successfully added #{@game.title}." }
         format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }
