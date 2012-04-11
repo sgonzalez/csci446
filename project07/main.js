@@ -33,7 +33,7 @@ function resetGame() {
 }
 
 function addHighScore(score, name) {
-	
+	highScores.push([score, name]);
 }
 
 function populateHighScores(scores) {
