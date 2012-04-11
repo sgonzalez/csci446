@@ -1,5 +1,6 @@
 var guessesLeft;
 var actualNum;
+var hasWon;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 
 $(function() {
@@ -7,19 +8,27 @@ $(function() {
 
 	$('#guessTheNumber').submit(function() {
 		var guess = $("input[name='guess']").val();
-		if (guess < actualNum.toString())
+		
+		if (guess < actualNum.toString()) {
 			alert("To Low");
-		else if (guess > actualNum.toString())
+		} else if (guess > actualNum.toString()) {
 			alert("To High");
-		else
-			alert("YOU WIN!");
-		if (guess != actualNum.toString()) {
-			alert("Number is: " + actualNum.toString());
+		} else {
+		  hasWon = true;
+		}
+		
+		
+		if (!hasWon && guessesLeft > 0) {
 			guessesLeft--;
 			updateScore(guessesLeft);
 		} else {
 			alert("YOU WIN!");
 		}
+		
+		if (guessesLeft == 0) {
+			alert("YOU LOSE!");
+		}
+		
 		return false;
 	});
 
@@ -27,6 +36,7 @@ $(function() {
 
 function resetGame() {
 	guessesLeft = 10;
+	hasWon = false;
 	updateScore(guessesLeft);
 	populateHighScores(highScores);
 	actualNum = Math.floor(Math.random() * 100) + 1
