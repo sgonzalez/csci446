@@ -23,10 +23,16 @@ $(function() {
 			updateScore(guessesLeft);
 		} else {
 			alert("YOU WIN!");
+			
+			var name = prompt('What is your name?', 'Anonymous');
+			if (name) addHighScore(10-guessesLeft, name)
+			else alert("No score added to scoreboard!");
+			resetGame();
 		}
 		
 		if (guessesLeft == 0) {
 			alert("YOU LOSE!");
+			resetGame();
 		}
 		
 		return false;
@@ -40,6 +46,7 @@ function resetGame() {
 	updateScore(guessesLeft);
 	populateHighScores(highScores);
 	actualNum = Math.floor(Math.random() * 100) + 1
+	var guess = $("input[name='guess']").val('');
 }
 
 function addHighScore(score, name) {
@@ -47,6 +54,7 @@ function addHighScore(score, name) {
 }
 
 function populateHighScores(scores) {
+	$('div#highScores').html('');
 	for (var i = 0; i < scores.length; ++i) {
 		$('div#highScores').append("<p>" + scores[i][0] + " " + scores[i][1] + "</p>");
 	}
